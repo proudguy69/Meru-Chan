@@ -7,7 +7,6 @@ from database import *
 
 class Cases(Cog):
     def __init__(self) -> None:
-        print("Cases Cog is online")
         super().__init__()
 
     case = app_commands.Group(name="case", description="Case commands for case modifcation")
