@@ -2,12 +2,13 @@ from discord.ext import commands
 from discord import Intents
 
 from database import *
+
 from cases.cases import Cases
+from embeds.embeds import Embeds
+from messages.messages import Messages
 from nsfw import Nsfw
 
 import json
-import requests
-
 
 # custom class
 class Bot(commands.Bot):
@@ -16,6 +17,8 @@ class Bot(commands.Bot):
     async def setup_hook(self) -> None:
         await self.add_cog(Cases())
         await self.add_cog(Nsfw(self))
+        await self.add_cog(Messages())
+        await self.add_cog(Embeds())
 
 
 
